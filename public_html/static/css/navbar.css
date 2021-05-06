@@ -1,0 +1,31 @@
+.navbar
+{
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    justify-items: stretch;
+    align-items: stretch;
+}
+
+.navbar-item
+{
+    transition: 0.2s;
+    display: grid;
+    width: auto;
+    height: auto;
+    text-decoration: none;
+    color: whitesmoke;
+}
+
+.navbar-item > *
+{
+    justify-self: center;
+    align-self: center;
+}
+
+.navbar-item:hover
+{
+    transition: 0.2s;
+    font-size: 130%;
+    background-color: rgba(50, 50, 50, 0.5);
+}
