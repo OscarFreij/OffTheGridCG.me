@@ -20,10 +20,6 @@ echo('<video class="background-video"src="static/media/Stars.mp4" type="video/mp
 
 echo("<div id='wrapper'>");
 
-echo("<div id='icon'>");
-echo("<a href='/?page=home'><img src='static/icon.png' alt='OF_ICON'></a>");
-echo("</div>");
-
 echo("<div id='nav-wrapper'>");
 require($MODULES_PATH."navbar.php");
 echo("</div>");

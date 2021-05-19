@@ -25,23 +25,10 @@ body
     background-color: rgba(80, 80, 80, 0.255);
 }
 
-#icon
-{
-    display: grid;
-    grid-column: L1/CC;
-    grid-row: T1/T2;
-    align-items: stretch;
-    justify-items: stretch;
-
-    justify-content: center;
-    align-content: center;
-    background-color: rgba(80, 80, 80, 0.255)
-}
-
 #nav-wrapper
 {
     display: grid;
-    grid-column: CC/-1;
+    grid-column: L1/-1;
     grid-row: T1/T2;
     background-color: rgba(80, 80, 80, 0.255)
 }

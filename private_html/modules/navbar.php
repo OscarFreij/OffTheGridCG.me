@@ -1,4 +1,5 @@
 <div class="navbar">
+    <a href='/?page=home' class="navbar-item"><img src='static/icon.png' alt='OF_ICON'></a>
     <a href="/?page=home" class="navbar-item">
         <p>Home</p>
     </a>

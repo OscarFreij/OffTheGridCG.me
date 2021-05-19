@@ -2,7 +2,7 @@
 {
     width: 100%;
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(5, 1fr);
     justify-items: stretch;
     align-items: stretch;
 }
@@ -23,7 +23,7 @@
     align-self: center;
 }
 
-.navbar-item:hover
+.navbar-item:not(:first-child):hover
 {
     transition: 0.2s;
     font-size: 130%;
