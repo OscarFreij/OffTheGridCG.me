@@ -1,23 +1,17 @@
+<div>
+    <h1>Projects - Current and past projects</h1>
+</div>
 <div id="project_Wrapper">
-    <div>
-        <h3>Inventor Files <a href="inventor/">LINK</a></h3>
+    <div status="done">
+        <h3>SSIS Lokaltrafiks Display <a href="https://ssis_ld.offthegridcg.me">LINK</a></h3>
+        <p>Display to show time tables for buss and subway stops/stations around NOD in Kista, Sweden</p>
     </div>
-    <div>
-        <h3>GYProjekt : Digital Cookbook <a href="GYProjekt/">LINK</a></h3>
-    </div>
-    <div>
-        <h3>LaunchTimes <a href="LaunchTimes/">LINK</a></h3>
-    </div>
-    <div>
-        <h3>Mandelbrott fraktaler <a href="MB/">LINK</a></h3>
-    </div>
-    <div>
-        <h3>projectX <a href="projectX/">LINK</a></h3>
-    </div>
-    <div>
-        <h3>KiCad <a href="KiCad/">LINK</a></h3>
-    </div>
-    <div>
+    <div status="done">
         <h3>UniPointCalc <a href="UniPointCalc/">LINK</a></h3>
+        <p>Calculator for the ending score of gymnasium here in Sweden</p>
+    </div>
+    <div status="done">
+        <h3>Sequence The Game <a href="http://sequence.offthegridcg.me">LINK</a></h3>
+        <p>A game I made during multiple streams on Twitch (<a href="https://twitch.tv/offthegridcg">OffTheGridCG</a>). More info on the site!</p>
     </div>
 </div>
