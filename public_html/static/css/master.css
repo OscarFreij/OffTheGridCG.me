@@ -32,7 +32,7 @@ body
     display: grid;
     grid-column: L1/-1;
     grid-row: T1/T2;
-    background-color: rgba(80, 80, 80, 0.255)
+    background-color: rgba(80, 80, 80, 0.255);
     font-family: 'Righteous', cursive;
 }
 
