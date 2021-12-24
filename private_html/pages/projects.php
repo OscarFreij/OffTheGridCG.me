@@ -1,5 +1,5 @@
 <div>
-    <h1>Projects - Current, past & planed projects</h1>
+    <h1>Projects - Current, past & planned projects</h1>
 </div>
 <div id="project_Wrapper">
     <div status="done">
