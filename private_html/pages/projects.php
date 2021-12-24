@@ -3,7 +3,7 @@
 </div>
 <div id="project_Wrapper">
     <div status="done">
-        <h3>UniPointCalc <a href="UniPointCalc/">LINK</a></h3>
+        <h3>UniPointCalc <a href="https://unipointcalc.offthegridcg.me">LINK</a></h3>
         <p>Calculator for the ending score of gymnasium here in Sweden</p>
     </div>
     <div status="done">
