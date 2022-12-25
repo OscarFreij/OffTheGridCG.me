@@ -3,98 +3,52 @@
 // Path Config Beginning //
 $JS_PATH = "static/js/";
 $CSS_PATH = "static/css/";
-$MEDIA_PATH = "static/media/";
+$VIDEO_PATH = "static/videos/";
+$PICTURE_PATH = "static/pictures/";
 
 $MODULES_PATH = "../private_html/modules/";
 $PAGES_PATH = "../private_html/pages/";
+$EPAGES_PATH = "../private_html/pages/errors/";
 $VENDOR_PATH = "../private_html/vendor/";
 
 // Path Config Ending //
 
 // Webpage building Beginning //
-echo("<!DOCTYPE html>");
+?>
+<!DOCTYPE html>
+<html lang="en">
+<?php
+require_once $MODULES_PATH.'head.php';
+?>
+<body>
+    <video autoplay muted loop id="bg-video">
+        <source src="<?=$VIDEO_PATH."Stars.mp4"?>" type="video/mp4">
+    </video>
+    <?php
+    require_once $MODULES_PATH.'navbar.php';
+    ?>
+    <div class="wrapper">
+        <?php
+        if (!isset($_GET['page']))
+        {
+            require $PAGES_PATH.'home.php';
+        }
+        else if (file_exists($PAGES_PATH.$_GET['page'].'.php'))
+        {
+            require $PAGES_PATH.$_GET['page'].'.php';
+        }
+        else
+        {
+            require $EPAGES_PATH."404.html";
+        }
+        ?>
+    </div>
+    <?php
+    require $MODULES_PATH."postLoad.php";
+    ?>
+</body>
+</html>
 
-require($MODULES_PATH."head.php");
-
-echo('<video class="background-video"src="static/media/Stars.mp4" type="video/mp4" autoplay loop muted></video>');
-
-echo("<div id='wrapper'>");
-
-echo("<div id='nav-wrapper'>");
-require($MODULES_PATH."navbar.php");
-echo("</div>");
-
-echo("<div id='content-wrapper'>");
-
-if (isset($_GET["page"]))
-{
-    switch ($_GET["page"])
-    {
-        case 'home':
-            if(file_exists($PAGES_PATH."home.php"))
-            {
-                require($PAGES_PATH."home.php");
-            }
-            else
-            {
-                require($PAGES_PATH."error_pages/404.php");    
-            }
-            break;
-
-        case 'projects':
-            if(file_exists($PAGES_PATH."projects.php"))
-            {
-                require($PAGES_PATH."projects.php");
-            }
-            else
-            {
-                require($PAGES_PATH."error_pages/404.php");    
-            }
-            break;
-
-        case 'about':
-            if(file_exists($PAGES_PATH."about.php"))
-            {
-                require($PAGES_PATH."about.php");
-            }
-            else
-            {
-                require($PAGES_PATH."error_pages/404.php");    
-            }
-            break;
-
-        case 'contact':
-            if(file_exists($PAGES_PATH."contact.php"))
-            {
-                require($PAGES_PATH."contact.php");
-            }
-            else
-            {
-                require($PAGES_PATH."error_pages/404.php");    
-            }
-            break;
-
-        default:
-            require($PAGES_PATH."error_pages/404.php");
-            break;
-    }
-}
-else
-{
-    if(file_exists($PAGES_PATH."home.php"))
-    {
-        require($PAGES_PATH."home.php");
-    }
-    else
-    {
-        require($PAGES_PATH."error_pages/404.php");    
-    }
-}
-
-
-
-echo("</div>");
-echo("<div id='footer-wrapper'></div>");
-echo("</div>");
+<?php
 // Webpage building Ending //
 ?>
