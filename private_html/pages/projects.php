@@ -37,10 +37,10 @@
 <div>
     <p>
         Legend:
-        <span style="color: green;">Done</span> | 
-        <span style="color: yellow;">On Hold</span> | 
-        <span style="color: cyan;">Active</span> | 
-        <span style="color: gainsboro;">Planning</span> | 
-        <span style="color: maroon;">Dropped</span>
+        <span class="legend_text" status="done">Done</span> | 
+        <span class="legend_text" status="onhold">On Hold</span> | 
+        <span class="legend_text" status="active">Active</span> | 
+        <span class="legend_text" status="planning">Planning</span> | 
+        <span class="legend_text" status="dropped">Dropped</span>
     </p>
 </div>

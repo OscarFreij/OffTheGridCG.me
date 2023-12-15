@@ -38,3 +38,27 @@
     border: solid maroon 5px;
 }
 
+.legend_text[status="done"]
+{
+    color: green;
+}
+
+.legend_text[status="onhold"]
+{
+    color: yellow;
+}
+
+.legend_text[status="active"]
+{
+    color: cyan;
+}
+
+.legend_text[status="planning"]
+{
+    color: gainsboro;
+}
+
+.legend_text[status="dropped"]
+{
+    color:  maroon;
+}
