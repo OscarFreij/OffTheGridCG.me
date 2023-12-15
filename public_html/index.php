@@ -1,4 +1,6 @@
 <?php
+// Setup CSP header
+header("content-security-policy: default-src 'self'; style-src-elem 'self' fonts.googleapis.com; font-src 'self' fonts.gstatic.com;");
 
 // Path Config Beginning //
 $JS_PATH = "static/js/";
@@ -13,10 +15,13 @@ $VENDOR_PATH = "../private_html/vendor/";
 
 // Webpage building Beginning //
 echo("<!DOCTYPE html>");
+echo("<html lang='en'>");
 
 require($MODULES_PATH."head.php");
 
-echo('<video class="background-video"src="static/media/Stars.mp4" type="video/mp4" autoplay loop muted></video>');
+echo("<body>");
+
+echo('<video class="background-video" src="static/media/Stars.mp4" autoplay loop muted></video>');
 
 echo("<div id='wrapper'>");
 
@@ -96,5 +101,7 @@ else
 echo("</div>");
 echo("<div id='footer-wrapper'></div>");
 echo("</div>");
+echo("</body>");
+echo("</html>");
 // Webpage building Ending //
 ?>
