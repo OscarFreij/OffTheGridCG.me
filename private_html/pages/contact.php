@@ -4,7 +4,7 @@
     </header>
     <p>If you have any questions, feedback, or just want to say hello, feel free to reach out through any of the following methods:</p>
     <ul>
-        <li>LinkedIn: <a href="https://www.linkedin.com/in/oscar-freij/">Oscar Freij</a></li>
+        <li>LinkedIn: <a href="https://www.linkedin.com/in/oscar-freij-4a5690165/">Oscar Freij</a></li>
         <li>GitHub: <a href="https://github.com/OscarFreij">OscarFreij</a></li>
         <li>Discord: Ogglas</li>
     </ul>
