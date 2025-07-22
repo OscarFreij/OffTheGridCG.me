@@ -42,6 +42,14 @@
     color: orange;
 }
 
+.navbar-link:not(.navbar-link-active):hover::before {
+    content: ">";
+}
+
+.navbar-link:not(.navbar-link-active):hover::after {
+    content: "<";
+}
+
 .navbar-link:not(.navbar-link-active)::before {
     content: "<";
 }
@@ -95,30 +103,6 @@
     .navbar-item:not(:last-child)
     {
         margin-bottom: 1em;
-    }
-
-    .navbar-link.navbar-link-active::before {
-        content: ">";
-        color: orange;
-    }
-
-    .navbar-link.navbar-link-active::after {
-        content: "<";
-        color: orange;
-    }
-
-    .navbar-link:not(.navbar-link-active)::before {
-        content: "<";
-    }
-
-    .navbar-link:not(.navbar-link-active)::after {
-        content: ">";
-    }
-
-    .navbar-link {
-        font-family: "Ubuntu Mono";
-        color: lime;
-        text-decoration: none;
     }
 }
 
