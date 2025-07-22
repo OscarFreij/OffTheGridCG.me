@@ -13,7 +13,7 @@
         I also have a passion for programming, and I enjoy creating software and tools that can help me and others in their daily work.
     </p>
     <p>
-        As mentioned above, I have a few projects that I have worked on, and you can find more information about them on the <a href="/projects.php">projects page</a>
+        As mentioned above, I have a few projects that I have worked on, and you can find more information about them on the <a href="/?page=projects">projects page</a>
     </p>
     <p>
         In my free time, I enjoy playing video games, coding random projects, watching movies and TV shows, and spending time with my friends and family.
