@@ -8,9 +8,19 @@
 
 #project_Wrapper > *
 {
-    background-color: rgb(255, 255, 255, 0.4);
+    background-color: rgb(150, 150, 150, 0.3);
     border-radius: 1rem;
     padding: 1em;
+}
+
+#project_Wrapper > * > p
+{
+    font-family: "Ubuntu Mono";
+}
+
+#project_Wrapper > * > *:is(h1, h2, h3, h4, h5, h6)
+{
+    margin: 0.5em 0;
 }
 
 #project_Wrapper > *[status="done"]
@@ -61,4 +71,41 @@
 .legend_text[status="dropped"]
 {
     color:  maroon;
+}
+
+.legend_text:not(:last-child)::after
+{
+    color: white;
+    content: " | ";
+}
+
+#legend {
+    text-align: center;
+    margin: 1em 0;
+}
+
+#legend  {
+    font-weight: bold;
+}
+
+#legend > *:first-child::after {
+    content: ": ";
+}
+
+#legend > *:first-child + br {
+        display: none;
+    }
+
+@media screen and (max-width: 650px) {
+    #project_Wrapper {
+        grid-template-columns: 1fr;
+    }
+
+    #legend > *:first-child + br {
+        display: block;
+    }
+
+    #legend > *:first-child::after {
+    content: "";
+    }
 }

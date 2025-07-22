@@ -1,0 +1,7 @@
+.welcome-list {
+    list-style-type: upper-roman;
+}
+
+.welcome-list > li {
+    margin: 0.5em 0;
+}
