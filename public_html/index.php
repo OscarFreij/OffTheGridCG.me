@@ -1,6 +1,6 @@
 <?php
 // Setup CSP header
-header("content-security-policy: default-src 'self'; style-src-elem 'self' fonts.googleapis.com; font-src 'self' fonts.gstatic.com;");
+header("content-security-policy: default-src 'self'; style-src-elem 'self' fonts.googleapis.com; font-src 'self' fonts.gstatic.com; script-src 'self' https://code.jquery.com");
 
 // Path Config Beginning //
 $JS_PATH = "static/js/";
