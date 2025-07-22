@@ -1,4 +1,6 @@
 <?php
+// Setup CSP header
+header("content-security-policy: default-src 'self'; style-src-elem 'self' fonts.googleapis.com; font-src 'self' fonts.gstatic.com;");
 
 // Path Config Beginning //
 $JS_PATH = "static/js/";
@@ -48,7 +50,6 @@ require_once $MODULES_PATH.'head.php';
     ?>
 </body>
 </html>
-
 <?php
 // Webpage building Ending //
 ?>

@@ -107,5 +107,5 @@
 
     #legend > *:first-child::after {
     content: "";
-}
+    }
 }
