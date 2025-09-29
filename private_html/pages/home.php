@@ -2,8 +2,7 @@
     <header>
         <h1>Hello there and welcome!</h1>
     </header>
-    <p>This is my personal website, where I share information about myself, my projects, and my interests.</p>
-    <br>
+    <h2>This is my personal website, where I share information about myself, my projects, and my interests.</p>
     <h3>There are a few ways may have sumbled upon this page, either by:</h3>
     <ul class="welcome-list">
         <li>From a link on my <a href="https://offthegridcg.me">website</a></li>

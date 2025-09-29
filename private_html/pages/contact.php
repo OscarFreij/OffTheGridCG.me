@@ -7,6 +7,7 @@
         <li>LinkedIn: <a href="https://www.linkedin.com/in/oscar-freij-4a5690165/">Oscar Freij</a></li>
         <li>GitHub: <a href="https://github.com/OscarFreij">OscarFreij</a></li>
         <li>Discord: Ogglas</li>
+        <li>Instagram: <a href="https://instagram.com/ogglas_02">ogglas_02</a></li>
     </ul>
     <p>Contact me through any of the above methods, and I will get back to you as soon as possible.</p>
     <p>Thank you for visiting my site, and I hope to hear from you soon!</p>
