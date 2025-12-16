@@ -30,3 +30,5 @@ function toggleNavbarButton(element)
   let pNode = element.parentNode;
   pNode.querySelector('.navbar-item-container').classList.toggle('opened');
 }
+
+document.querySelector('.navbar-toggler').addEventListener('click', toggleNavbarButton.bind(null, document.querySelector('.navbar-toggler')));
