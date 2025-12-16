@@ -1,6 +1,7 @@
 <?php
 // Setup CSP header
-header("content-security-policy: default-src 'self'; style-src-elem 'self' fonts.googleapis.com; font-src 'self' fonts.gstatic.com; script-src 'self' https://code.jquery.com");
+header("content-security-policy: default-src 'self'; style-src-elem 'self' fonts.googleapis.com; font-src 'self' fonts.gstatic.com; script-src 'self' https://code.jquery.com 'sha256-wO9CuAvdcWbhEo6Iq6JrKfXlZzF5o1FlbCCHuI0wFoM=' img-src www.googletagmanager.com;
+connect-src www.googletagmanager.com www.google.com");
 
 // Path Config Beginning //
 $JS_PATH = "static/js/";
