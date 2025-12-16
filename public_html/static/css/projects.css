@@ -169,7 +169,7 @@ header {
 
 main {
     opacity: 0;
-    animation: fadeIn 1s ease-in-out 0.5s forwards;
+    animation: fadeIn 1s ease-in-out 0.25s forwards;
     margin-top: 1em;
     margin-bottom: 1em;
     background-color: var(--bg-color-primary);
