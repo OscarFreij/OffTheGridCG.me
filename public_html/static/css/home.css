@@ -1,7 +1,89 @@
-.welcome-list {
-    list-style-type: upper-roman;
+:root {
+    --bg-color-primary: rgba(0, 78, 109, 0.2);
+    --bg-blur: blur(2px);
 }
 
-.welcome-list > li {
-    margin: 0.5em 0;
+#welcome-list-display {
+    background-color: black;
+    justify-content: center;
+    text-align: start;
+    padding: 1em;
+    border-radius: 1rem;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+#welcome-list-display > span {
+    font-family: "Ubuntu Mono";
+    font-size: 1.5em;
+    border-right: 2px solid lime;
+    padding-right: 5px;
+    animation: caret 1s steps(1) infinite;
+}
+
+#welcome-list-display > span::before {
+    content: "usr@srv:~$ ";
+    color: lime;
+}
+
+@keyframes caret {
+    50% {
+        border-color: transparent;
+    }
+}
+
+header {
+    opacity: 0;
+    animation: fadeIn 0.5s ease-in-out forwards;
+    background-color: var(--bg-color-primary);
+    backdrop-filter: var(--bg-blur);
+    padding: 1em;
+    border-radius: 1rem;
+    text-align: center;
+    margin-bottom: 2em;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.bg-box-1, .bg-box-2 {
+    opacity: 0;
+    background-color: var(--bg-color-primary);
+    backdrop-filter: var(--bg-blur);
+    border-radius: 1rem;
+    padding: 2em;
+    margin-bottom: 2em;
+    animation: fadeIn 0.5s ease-in-out forwards;
+}
+
+.bg-box-1 {
+    animation-delay: 0.25s;
+}
+.bg-box-2 {
+    animation-delay: 0.5s;
+}
+
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+#preamble-text {
+    text-align: center;
+    margin-bottom: 2em;
+}
+
+#closing-text {
+    text-align: center;
+    margin-top: 2em;
+    margin-bottom: 0;
+}
+
+@media screen and (max-width: 650px) {
+    #welcome-list-display > span {
+        font-size: 1.2em;
+    }
 }

@@ -10,6 +10,10 @@
             echo('<script src="'.$JS_PATH.$_GET['page'].".js".'"></script>');
         }
     }
+    else
+    {
+        echo('<script src="'.$JS_PATH."home.js".'"></script>');
+    }
 ?>
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-JPXWH16T57"></script>

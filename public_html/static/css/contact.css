@@ -1,0 +1,36 @@
+:root {
+    --bg-color-primary: rgba(0, 109, 33, 0.2);
+    --bg-blur: blur(2px);
+}
+
+header {
+    opacity: 0;
+    animation: fadeIn 0.5s ease-in-out forwards;
+    background-color: var(--bg-color-primary);
+    backdrop-filter: var(--bg-blur);
+    padding: 1em;
+    border-radius: 1rem;
+    text-align: center;
+}
+
+main {
+    opacity: 0;
+    animation: fadeIn 1s ease-in-out 0.25s forwards;
+    margin-top: 1em;
+    margin-bottom: 1em;
+    background-color: var(--bg-color-primary);
+    backdrop-filter: var(--bg-blur);
+    padding: 1em;
+    border-radius: 1rem;
+}
+
+.contact-list {
+    list-style-type: none;
+    padding: 0;
+    justify-items: center;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
