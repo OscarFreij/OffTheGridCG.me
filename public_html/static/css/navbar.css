@@ -13,6 +13,7 @@
     justify-content: center;
     width: 20%;
     text-align: center;
+    font-family: var(--font-family);
 }
 
 .navbar-toggler {

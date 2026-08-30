@@ -1,0 +1,28 @@
+{
+    "default-src" : [
+        "'self'"
+    ],
+    "style-src" : [
+        "'self'",
+        "fonts.googleapis.com"
+    ],
+    "font-src" : [
+        "'self'",
+        "fonts.gstatic.com"
+    ],
+    "script-src" : [
+        "'self'",
+        "https://www.googletagmanager.com",
+        "'sha256-wO9CuAvdcWbhEo6Iq6JrKfXlZzF5o1FlbCCHuI0wFoM='",
+        "'sha256-1n9AR5QN06n7Qnn5LsocgtYY31pWYP5CsW9SeGtgrjM='",
+        "'sha256-uhi/2fAgu1RVvsfHU/fWCuzaqOOp5jC/+PHk2WQuk9k='"
+    ],
+    "img-src" : [
+        "'self'",
+        "www.googletagmanager.com"
+    ],
+    "connect-src" : [
+        "www.googletagmanager.com",
+        "www.google.com"
+    ]
+}

@@ -1,8 +1,26 @@
+:root {
+    --primary-color: lime;
+    --secondary-color: orange;
+    --tertiary-color: #2196f3;
+    --background-color: #121212;
+    --text-color: #ffffff;
+    --font-family: "Righteous", sans-serif;
+
+    --bg-color-primary: rgba(18, 18, 18, 0.55);
+    --bg-blur: blur(2px);
+}
+
 body
 {
     background-color: black;
+    background-image: url("/static/pictures/backgrounds/blackboard.jpg");
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
     color: whitesmoke;
-    font-family: "Righteous";
+    font-family: "Ubuntu Mono", monospace;
+    line-height: 1.6;
     margin: 0;
     min-height: 100vh;
     display: flex;
@@ -10,13 +28,31 @@ body
     height: 100%;
 }
 
-#bg-video {
-    position: fixed;
-    right: 0;
-    bottom: 0;
-    min-width: 100%;
-    min-height: 100%;
-    z-index: -1;
+p {
+    margin: 0 0 1.2em;
+}
+
+p:last-child {
+    margin-bottom: 0;
+}
+
+h1 {
+    font-family: var(--font-family);
+}
+
+h2, h3, h4, h5, h6 {
+    font-family: "Ubuntu Mono", monospace;
+    font-weight: bold;
+}
+
+a {
+    color: var(--primary-color);
+    text-decoration: none;
+}
+
+a:hover,
+a:focus-visible {
+    text-decoration: underline;
 }
 
 .wrapper {
@@ -32,12 +68,74 @@ body
     grid-row: 1;
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: stretch;
     justify-content: center;
     padding-top: 3em;
     width: 100%;
 }
 
+header, main {
+    opacity: 0;
+    animation: fadeIn 0.5s ease-in-out forwards;
+    background-color: var(--bg-color-primary);
+    backdrop-filter: var(--bg-blur);
+    box-sizing: border-box;
+    width: 100%;
+    max-width: 46em;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 1em;
+    border-radius: 1rem;
+    text-align: center;
+}
+
+main {
+    animation-delay: 0.25s;
+    animation-duration: 1s;
+    margin-top: 1em;
+    margin-bottom: 1em;
+    text-align: initial;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
 .text-center{
     text-align: center;
+}
+
+.footer {
+    text-align: center;
+    margin-top: auto;
+    padding: 1em;
+    font-size: 0.8em;
+    color: gray;
+}
+
+.footer-social {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1em;
+    list-style: none;
+    margin: 0 0 0.75em;
+    padding: 0;
+}
+
+.footer-social a {
+    color: gray;
+    display: inline-flex;
+    transition: color 0.2s ease-in-out;
+}
+
+.footer-social a:hover,
+.footer-social a:focus-visible {
+    color: var(--primary-color);
+}
+
+.footer-social svg {
+    width: 1.4em;
+    height: 1.4em;
 }
