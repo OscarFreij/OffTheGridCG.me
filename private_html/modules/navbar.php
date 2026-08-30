@@ -11,22 +11,22 @@
     </button>
     <ul class="navbar-item-container">
         <li class="navbar-item">
-            <a href="/?page=home" class="navbar-link">
+            <a href="/" class="navbar-link">
                 Home
             </a>
         </li>
         <li class="navbar-item">
-            <a href="/?page=about" class="navbar-link">
+            <a href="/about" class="navbar-link">
                 About
             </a>
         </li>
         <li class="navbar-item">
-            <a href="/?page=projects" class="navbar-link">
+            <a href="/projects" class="navbar-link">
                 Projects
             </a>
         </li>
         <li class="navbar-item">
-            <a href="/?page=contact" class="navbar-link">
+            <a href="/contact" class="navbar-link">
                 Contact
             </a>
         </li>

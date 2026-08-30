@@ -1,24 +1,16 @@
 function SetActivePage() {
-    const params = new Proxy(new URLSearchParams(window.location.search), {
-        get: (searchParams, prop) => searchParams.get(prop),
-      });
-      let value = params.page;
+    const currentPath = window.location.pathname.replace(/\/+$/, "") || "/";
+    const links = document.querySelectorAll(".navbar-link");
 
-      if (value == null)
-      {
-          console.log("no page specified in URL. Setting page to default: home");
-          value = "home";
-      }
-
-      for (let index = 0; index < $(".navbar-link").length; index++) {
-        const element = $(".navbar-link")[index];
-        if (element.href.includes(value))
+    for (let index = 0; index < links.length; index++) {
+        const element = links[index];
+        const linkPath = new URL(element.href).pathname.replace(/\/+$/, "") || "/";
+        if (linkPath === currentPath)
         {
             element.classList.add("navbar-link-active");
-            console.log("current page: "+value);
             return;
         }
-      }
+    }
 }
 
 SetActivePage();

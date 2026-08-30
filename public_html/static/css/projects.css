@@ -1,21 +1,28 @@
 :root {
-    --bg-color-primary: rgba(109, 13, 0, 0.2);
-    --bg-blur: blur(2px);
+    --status-done-color: var(--primary-color);
+    --status-active-color: var(--tertiary-color);
+    --status-onhold-color: var(--secondary-color);
+    --status-planning-color: #c586c0;
+    --status-dropped-color: #767676;
 }
 
+.page-projects header, .page-projects main {
+    max-width: 70em;
+}
 
 #project_Wrapper
 {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-auto-flow: row;
+    align-items: start;
     grid-gap: 1em;
 }
 
 #project_Wrapper > *
 {
-    background-color: rgb(150, 150, 150, 0.3);
-    border-radius: 1rem;
+    background-color: rgba(0, 0, 0, 0.4);
+    border: 1px solid rgba(255, 255, 255, 0.1);
     padding: 1em;
 }
 
@@ -31,52 +38,78 @@
 
 #project_Wrapper > *[status="done"]
 {
-    border: solid green 5px;
+    border-left: 4px solid var(--status-done-color);
 }
 
 #project_Wrapper > *[status="onhold"]
 {
-    border: solid yellow 5px;
+    border-left: 4px solid var(--status-onhold-color);
 }
 
 #project_Wrapper > *[status="active"]
 {
-    border: solid cyan 5px;
+    border-left: 4px solid var(--status-active-color);
 }
 
 #project_Wrapper > *[status="planning"]
 {
-    border: solid purple 5px;
+    border-left: 4px solid var(--status-planning-color);
 }
 
 #project_Wrapper > *[status="dropped"]
 {
-    border: solid maroon 5px;
+    border-left: 4px solid var(--status-dropped-color);
+}
+
+.project-status {
+    font-family: "Ubuntu Mono";
+    font-size: 0.85em;
+    font-weight: bold;
+    letter-spacing: 0.05em;
+    margin: 0 0 0.25em;
+}
+
+#project_Wrapper > *[status="done"] .project-status     { color: var(--status-done-color); }
+#project_Wrapper > *[status="onhold"] .project-status   { color: var(--status-onhold-color); }
+#project_Wrapper > *[status="active"] .project-status   { color: var(--status-active-color); }
+#project_Wrapper > *[status="planning"] .project-status { color: var(--status-planning-color); }
+#project_Wrapper > *[status="dropped"] .project-status  { color: var(--status-dropped-color); }
+
+.project-links {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25em;
+    margin-bottom: 0.5em;
+}
+
+.project-links a {
+    font-family: "Ubuntu Mono";
+    font-size: 0.9em;
 }
 
 .legend-text[status="done"]
 {
-    color: green;
+    color: var(--status-done-color);
 }
 
 .legend-text[status="onhold"]
 {
-    color: yellow;
+    color: var(--status-onhold-color);
 }
 
 .legend-text[status="active"]
 {
-    color: cyan;
+    color: var(--status-active-color);
 }
 
 .legend-text[status="planning"]
 {
-    color: purple;
+    color: var(--status-planning-color);
 }
 
 .legend-text[status="dropped"]
 {
-    color:  maroon;
+    color: var(--status-dropped-color);
 }
 
 .legend-text
@@ -95,6 +128,7 @@
   display: flex;
   align-items: stretch;
   gap: 0.75rem;
+  margin: 0;
 }
 
 .legend-list p {
@@ -155,30 +189,4 @@
     .legend-text-split {
         width: 0px;
     }
-}
-
-header {
-    opacity: 0;
-    animation: fadeIn 0.5s ease-in-out forwards;
-    background-color: var(--bg-color-primary);
-    backdrop-filter: var(--bg-blur);
-    padding: 1em;
-    border-radius: 1rem;
-    text-align: center;
-}
-
-main {
-    opacity: 0;
-    animation: fadeIn 1s ease-in-out 0.25s forwards;
-    margin-top: 1em;
-    margin-bottom: 1em;
-    background-color: var(--bg-color-primary);
-    backdrop-filter: var(--bg-blur);
-    padding: 1em;
-    border-radius: 1rem;
-}
-
-@keyframes fadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
 }

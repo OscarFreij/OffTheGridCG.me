@@ -1,8 +1,3 @@
-:root {
-    --bg-color-primary: rgba(0, 78, 109, 0.2);
-    --bg-blur: blur(2px);
-}
-
 #welcome-list-display {
     background-color: black;
     justify-content: center;
@@ -21,7 +16,7 @@
 }
 
 #welcome-list-display > span::before {
-    content: "usr@srv:~$ ";
+    content: "guest@web:~$ ";
     color: lime;
 }
 
@@ -31,25 +26,56 @@
     }
 }
 
-header {
-    opacity: 0;
-    animation: fadeIn 0.5s ease-in-out forwards;
-    background-color: var(--bg-color-primary);
-    backdrop-filter: var(--bg-blur);
-    padding: 1em;
-    border-radius: 1rem;
-    text-align: center;
-    margin-bottom: 2em;
+.hero {
+    position: relative;
+    overflow: hidden;
+    isolation: isolate;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 16em;
+    padding: 2em 1em;
+    background-color: black;
+    backdrop-filter: none;
+    margin-bottom: 1em;
 }
 
-main {
+#hero-video {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -2;
+}
+
+.hero::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.7));
+    z-index: -1;
+}
+
+.hero h1 {
+    margin: 0;
+    padding: 0 0.5em;
+}
+
+.page-home main {
     display: flex;
     flex-direction: column;
     align-items: center;
+    background: none;
+    backdrop-filter: none;
+    padding: 0;
+    border-radius: 0;
 }
 
 .bg-box-1, .bg-box-2 {
     opacity: 0;
+    width: 100%;
+    box-sizing: border-box;
     background-color: var(--bg-color-primary);
     backdrop-filter: var(--bg-blur);
     border-radius: 1rem;
@@ -63,12 +89,6 @@ main {
 }
 .bg-box-2 {
     animation-delay: 0.5s;
-}
-
-
-@keyframes fadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
 }
 
 #preamble-text {

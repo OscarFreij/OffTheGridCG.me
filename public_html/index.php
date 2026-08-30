@@ -1,53 +1,75 @@
 <?php
-// Setup CSP header
-header("content-security-policy: default-src 'self'; style-src-elem 'self' fonts.googleapis.com; font-src 'self' fonts.gstatic.com; script-src 'self' https://code.jquery.com 'sha256-wO9CuAvdcWbhEo6Iq6JrKfXlZzF5o1FlbCCHuI0wFoM=' img-src www.googletagmanager.com;
-connect-src www.googletagmanager.com www.google.com");
+// Include kernel //
+require_once __DIR__ . '/../private_html/classes/kernel.php';
+use OffTheGridCG\ENV;
+use OffTheGridCG\CONFIG;
+$CONFIG = CONFIG::getInstance();
+use OffTheGridCG\CSP;
+use OffTheGridCG\Functions;
+// Setup CSP header //
+CSP::setHeader();
 
-// Path Config Beginning //
-$JS_PATH = "static/js/";
-$CSS_PATH = "static/css/";
-$VIDEO_PATH = "static/videos/";
-$PICTURE_PATH = "static/pictures/";
+// Routing Beginning //
+$requestPath = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
 
-$MODULES_PATH = "../private_html/modules/";
-$PAGES_PATH = "../private_html/pages/";
-$EPAGES_PATH = "../private_html/pages/errors/";
-$VENDOR_PATH = "../private_html/vendor/";
+if ($requestPath === '/sitemap.xml') {
+    header('Content-Type: application/xml; charset=UTF-8');
+    echo Functions::renderSitemap();
+    exit;
+}
 
-// Path Config Ending //
+if ($requestPath === '/robots.txt') {
+    header('Content-Type: text/plain; charset=UTF-8');
+    echo Functions::renderRobotsTxt();
+    exit;
+}
+
+if ($requestPath === '/llms.txt') {
+    header('Content-Type: text/plain; charset=UTF-8');
+    echo Functions::renderLlmsTxt();
+    exit;
+}
+
+$pathSegments = array_values(array_filter(explode('/', trim($requestPath, '/')), fn($segment) => $segment !== ''));
+$page = $pathSegments[0] ?? null;
+$pageIsValid = $page !== null && preg_match('/^[a-z0-9-]+$/', $page) === 1;
+// Routing Ending //
 
 // Webpage building Beginning //
 ?>
 <!DOCTYPE html>
 <html lang="en">
 <?php
-require_once $MODULES_PATH.'head.php';
+require_once $CONFIG->get('MODULES_PATH').'head.php';
 ?>
-<body>
-    <video autoplay muted loop id="bg-video">
-        <source src="<?=$VIDEO_PATH."Stars.mp4"?>" type="video/mp4">
-    </video>
+<body class="page-<?= $page === null ? 'home' : ($pageIsValid ? $page : '404') ?>">
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=<?= $CONFIG->get('GTM_TAG') ?>"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
     <?php
-    require_once $MODULES_PATH.'navbar.php';
+    require_once $CONFIG->get('MODULES_PATH').'navbar.php';
     ?>
     <div class="wrapper">
         <?php
-        if (!isset($_GET['page']))
+        $pagesPath = $CONFIG->get('PAGES_PATH');
+        if ($page === null)
         {
-            require $PAGES_PATH.'home.php';
+            require $pagesPath.'home.php';
         }
-        else if (file_exists($PAGES_PATH.$_GET['page'].'.php'))
+        else if ($pageIsValid && file_exists($pagesPath.$page.'.php'))
         {
-            require $PAGES_PATH.$_GET['page'].'.php';
+            require $pagesPath.$page.'.php';
         }
         else
         {
-            require $EPAGES_PATH."404.html";
+            require $CONFIG->get('EPAGES_PATH')."404.html";
         }
         ?>
     </div>
     <?php
-    require $MODULES_PATH."postLoad.php";
+    require $CONFIG->get('MODULES_PATH')."footer.php";
+    require $CONFIG->get('MODULES_PATH')."postLoad.php";
     ?>
 </body>
 </html>

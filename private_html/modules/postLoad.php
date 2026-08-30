@@ -1,28 +1,17 @@
 <div class="postLoad">
-    <script src="<?=$JS_PATH?>jquery-3.6.3.min.js"></script>
-    <script src="<?=$JS_PATH?>main.js"></script>
-    <script src="<?=$JS_PATH?>navbar.js"></script>
+    <script src="<?=$CONFIG->get('JS_PATH')?>navbar.js" defer></script>
 <?php
-    if (isset($_GET["page"]))
+    if ($page !== null)
     {
-        if (file_exists($JS_PATH.$_GET['page'].".js"))
+        if (file_exists($CONFIG->get('JS_PATH').$page.".js"))
         {
-            echo('<script src="'.$JS_PATH.$_GET['page'].".js".'"></script>');
+            echo('<script src="'.$CONFIG->get('JS_PATH').$page.".js".'" defer></script>');
         }
     }
     else
     {
-        echo('<script src="'.$JS_PATH."home.js".'"></script>');
+        echo('<script src="'.$CONFIG->get('JS_PATH')."home.js".'" defer></script>');
     }
 ?>
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-JPXWH16T57"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-JPXWH16T57');
-</script>
 </div>
 
